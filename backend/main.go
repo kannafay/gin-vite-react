@@ -1,11 +1,12 @@
 package main
 
 import (
-	"github.com/gin-gonic/gin"
 	"net/http"
 	"net/http/httputil"
 	"net/url"
 	"strings"
+
+	"github.com/gin-gonic/gin"
 )
 
 func main() {
@@ -18,8 +19,14 @@ func main() {
 	// 定义 API 路由组（优先级高）
 	api := r.Group("/api")
 	{
-		api.GET("/hello", func(c *gin.Context) {
+		api.GET("", func(c *gin.Context) {
 			c.JSON(http.StatusOK, gin.H{"message": "Hello from Gin!"})
+		})
+		api.GET("/home", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"title": "Welcome to the Home Page"})
+		})
+		api.GET("/about", func(c *gin.Context) {
+			c.JSON(http.StatusOK, gin.H{"title": "Welcome to the About Page"})
 		})
 	}
 

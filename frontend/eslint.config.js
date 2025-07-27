@@ -26,7 +26,7 @@ export default defineConfig([
       'no-unused-vars': ['error', { varsIgnorePattern: '^[A-Z_]' }], // 忽略大写变量
       'quotes': ['warn', 'single'], // 单引号
       'semi': ['warn', 'never'], // 不使用分号
-      'comma-dangle': ['warn', 'always-multiline'],
+      'comma-dangle': ['warn', 'always-multiline'], // 多行末尾逗号
     },
   },
 ])
