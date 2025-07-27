@@ -9,10 +9,7 @@ const router = createBrowserRouter([
   },
   {
     path: '/about',
-    loader: async () => {
-      await new Promise(resolve => setTimeout(resolve, 500)) // 模拟延迟
-      return await fetch('/api/about')
-    },
+    loader: async () => await fetch('/api/about'),
     HydrateFallback: Loading,
     lazy: async () => {
       const { default: About } = await import('@/pages/About')
